@@ -11,6 +11,13 @@
 
 #### Starting with: Take payments IRL with Solana Pay Tutorial
 
+✅ = Progress
+✅ ✅ = Completed, cool
+✅ ✅ ✅ = Completed, awesome!
+❌ = Gotcha
+
+-----
+
 ✅ Open source starter tutorial code: [Pointer Solana Pay Tutorial](pointer.gg/tutorials/solana-pay-irl-payments)
 ✅ Set up 2 Phantom Wallets - SolPayBuyer, SolPaySeller
 ✅ Get Devnet sol
@@ -23,10 +30,10 @@
 ✅ npm install @solana/web3.js @solana/wallet-adapter-react @solana/wallet-adapter-react-ui @solana/wallet-adapter-base @solana/wallet-adapter-wallets
 ✅ Update pages/_app.tsx
 ✅ sanity check - npm run dev
-✅ Looks good - http://localhost:3000/
+✅ ✅ Looks good - http://localhost:3000/
 ✅ _app.tsx code - creating a connection to the devnet Solana network. ("same in any app using these Solana libraries.")
 ✅ Update pages/index.tsx with new code
-✅ FIX not in TUTORIAL - due to issue I had 
+❌ ✅ FIX not in TUTORIAL - due to issue I had 
 // top between imports and start of component function of pages/index.tsx
 const WalletMultiButtonDynamic = dynamic(
   async () =>
@@ -35,10 +42,11 @@ const WalletMultiButtonDynamic = dynamic(
 )
 // replace the old WalletMultiButton component inside with WalletMultiButtonDynamic
 ✅ sanity check - npm run dev
-✅ sanity check - connect to wallet
+✅ ✅  sanity check - connect to wallet
 update shop address in lib/addresses.ts
 ✅ Get devnet USDC https://spl-token-faucet.com/?token-name=USDC-Dev
 ✅ Airdrop extra SOL devnet SOL https://spl-token-faucet.com/?token-name=USDC-Dev
+✅ ✅  Tutorial section: https://www.pointer.gg/tutorials/solana-pay-irl-payments/9a68e822-6fc6-439e-8941-e3ad78fa6d17
 ✅ Add page lib/addresses.ts
 ✅ Add shop public key
 ✅ (optional) Refactor public key in .gitignore file
@@ -49,8 +57,17 @@ update shop address in lib/addresses.ts
 ✅ First let’s just make sure that we can call this API and deserialize the returned transaction back.
 ✅ Update pages/checkout.tsx
 ✅ Checkout with item
-✅ "Okay nice, we’ve got a transaction from our API!"
+✅ ✅ ✅ "Okay nice, we’ve got a transaction from our API!"
 ✅ "Now let’s update the page to send that to the user’s wallet and ask them to approve it."
+✅ checkout.tsx update
+✅ Now after getTransaction and its useEffect hook, we need to add another function and hook:
+✅ ✅ ✅ After updating I received Approve Transaction from the last test one!!! ✅ ✅ ✅ Awesome!
+✅ ✅ ✅ And that’s all we have to do to send a transaction!
+✅ Next we update the UI with payment status.
+✅ npm install @solana/pay@0.2.0
+✅ We’re going to add one more useEffect to our pages/checkout.tsx:
+✅ ✅ ✅  If you refresh and approve the transaction, you should see a log message indicating that it’s paid:
+
 
 
 ### Proposed Step-by-Step

@@ -1,4 +1,4 @@
-import { useWallet } from '@solana/wallet-adapter-react'
+import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { Keypair, Transaction } from '@solana/web3.js'
 import { useRouter } from 'next/router'
@@ -9,11 +9,12 @@ import {
   MakeTransactionInputData,
   MakeTransactionOutputData,
 } from './api/makeTransaction'
+import { findReference, FindReferenceError } from '@solana/pay'
 
 export default function Checkout() {
   const router = useRouter()
-  const { publicKey } = useWallet()
-
+  const { connection } = useConnection()
+  const { publicKey, sendTransaction } = useWallet()
   // State to hold API response fields
   const [transaction, setTransaction] = useState<Transaction | null>(null)
   const [message, setMessage] = useState<string | null>(null)
@@ -75,9 +76,47 @@ export default function Checkout() {
     console.log(transaction)
   }
 
+  // unchanged code before this
   useEffect(() => {
     getTransaction()
   }, [publicKey])
+
+  // Send the fetched transaction to the connected wallet
+  async function trySendTransaction() {
+    if (!transaction) {
+      return
+    }
+    try {
+      await sendTransaction(transaction, connection)
+    } catch (e) {
+      console.error(e)
+    }
+  }
+
+  // Send the transaction once it's fetched
+  useEffect(() => {
+    trySendTransaction()
+  }, [transaction])
+
+  // Check every 0.5s if the transaction is completed
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      try {
+        // Check if there is any transaction for the reference
+        const signatureInfo = await findReference(connection, reference)
+        console.log('They paid!!!')
+      } catch (e) {
+        if (e instanceof FindReferenceError) {
+          // No transaction found yet, ignore this error
+          return
+        }
+        console.error('Unknown error', e)
+      }
+    }, 500)
+    return () => {
+      clearInterval(interval)
+    }
+  }, [])
 
   if (!publicKey) {
     return (
