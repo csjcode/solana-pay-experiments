@@ -19,7 +19,24 @@
 ✅ cd ../solana-pay-experiments
 ✅ npm install
 ✅ npm run dev
-
+✅ change them if you’d like to sell something other than cookies! changed to handbags
+✅ npm install @solana/web3.js @solana/wallet-adapter-react @solana/wallet-adapter-react-ui @solana/wallet-adapter-base @solana/wallet-adapter-wallets
+✅ Update pages/_app.tsx
+✅ sanity check - npm run dev
+✅ Looks good - http://localhost:3000/
+✅ _app.tsx code - creating a connection to the devnet Solana network. ("same in any app using these Solana libraries.")
+✅ Update pages/index.tsx with new code
+✅ FIX not in TUTORIAL - due to issue I had 
+// top between imports and start of component function of pages/index.tsx
+const WalletMultiButtonDynamic = dynamic(
+  async () =>
+    (await import('@solana/wallet-adapter-react-ui')).WalletMultiButton,
+  { ssr: false }
+)
+// replace the old WalletMultiButton component inside with WalletMultiButtonDynamic
+✅ sanity check - npm run dev
+✅ sanity check - connect to wallet
+✅ Get USDC https://spl-token-faucet.com/?token-name=USDC-Dev
 
 ### Proposed Step-by-Step
 
@@ -27,6 +44,16 @@ Part 1 Solana dApp Scaffold Next
 * Installation - npm install
 * Build and Run - npm run dev
 * Wallet Integration with Auto Connec / Refresh
+* Generating the transaction
+* Let’s start by installing some dependencies.
+* npm install @solana/web3.js @solana/wallet-adapter-react @solana/wallet-adapter-react-ui @solana/wallet-adapter-base @solana/wallet-adapter-wallets
+Update pages/_app.tsx 
+Requesting the transaction
+Sending the transaction
+Detecting Payment
+Adding a /confirmed page
+
+
 
 Part 2 - Get ready to exchange USDC
 * Getting some USDC-Dev
