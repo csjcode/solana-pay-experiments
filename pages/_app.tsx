@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <WalletModalProvider>
           <Layout>
             <Head>
-              <title>Cookies Inc</title>
+              <title>Handbags of the World</title>
             </Head>
             <Component {...pageProps} />
           </Layout>

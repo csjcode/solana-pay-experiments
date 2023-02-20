@@ -67,7 +67,13 @@ update shop address in lib/addresses.ts
 ✅ npm install @solana/pay@0.2.0
 ✅ We’re going to add one more useEffect to our pages/checkout.tsx:
 ✅ ✅ ✅  If you refresh and approve the transaction, you should see a log message indicating that it’s paid:
-
+✅ Adding a /confirmed page "We’re going to add a new page to tell the user that their payment has been accepted."
+✅ npm install react-circular-progressbar
+✅ There are a lot of neat options available in react-circular-progressbar! Their docs are here: https://www.npmjs.com/package/react-circular-progressbar
+✅ And let's add a page to display that component: confirmed.tsx
+✅ And finally, we can update the useEffect in our checkout page to redirect to this page as soon as we see the payment!
+✅ And now when we receive a valid payment we’ll display the new confirmed screen:
+✅ ✅ ✅ CONFIRMED TRANSACTION AND CONFIRMED PAGE
 
 
 ### Proposed Step-by-Step
