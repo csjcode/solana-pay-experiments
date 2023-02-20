@@ -36,14 +36,29 @@ const WalletMultiButtonDynamic = dynamic(
 // replace the old WalletMultiButton component inside with WalletMultiButtonDynamic
 ✅ sanity check - npm run dev
 ✅ sanity check - connect to wallet
-✅ Get USDC https://spl-token-faucet.com/?token-name=USDC-Dev
+update shop address in lib/addresses.ts
+✅ Get devnet USDC https://spl-token-faucet.com/?token-name=USDC-Dev
+✅ Airdrop extra SOL devnet SOL https://spl-token-faucet.com/?token-name=USDC-Dev
+✅ Add page lib/addresses.ts
+✅ Add shop public key
+✅ (optional) Refactor public key in .gitignore file
+✅ create our API route. Add a new file pages/api/makeTransaction.ts
+✅ Add page lib/calculatePrice.ts
+✅ You’ll see the checkout URL looks like: http://localhost:3000/checkout?box-of-cookies=2&basket-of-cookies=1. 
+✅ !!!NOTE: "In reality you’d want to record this transaction in a database as part of the API call. This would allow us to later validate that the paid transaction is correct. Again because we’re focusing on the Solana structures here I’ve skipped over that in this tutorial."
+✅ First let’s just make sure that we can call this API and deserialize the returned transaction back.
+✅ Update pages/checkout.tsx
+✅ Checkout with item
+✅ "Okay nice, we’ve got a transaction from our API!"
+✅ "Now let’s update the page to send that to the user’s wallet and ask them to approve it."
+
 
 ### Proposed Step-by-Step
 
 Part 1 Solana dApp Scaffold Next
 * Installation - npm install
 * Build and Run - npm run dev
-* Wallet Integration with Auto Connec / Refresh
+* Wallet Integration with Auto Connect / Refresh
 * Generating the transaction
 * Let’s start by installing some dependencies.
 * npm install @solana/web3.js @solana/wallet-adapter-react @solana/wallet-adapter-react-ui @solana/wallet-adapter-base @solana/wallet-adapter-wallets
