@@ -73,7 +73,7 @@ export default function Checkout() {
     )
     setTransaction(transaction)
     setMessage(json.message)
-    console.log(transaction)
+    // console.log(transaction)
   }
 
   // unchanged code before this

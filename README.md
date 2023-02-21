@@ -85,10 +85,26 @@ components/Products.tsx
 ✅ Update pages/api/makeTransaction.ts with code to handle this, We have these new variables: usdcMint, buyerUsdcAddress, shopUsdcAddress, We’ve also updated the transaction instruction in transferInstruction
 ✅ And now if you checkout you should see a transaction in USDC:
 ❌ ✅ Fixed Blocker, non-coding fix  - 
-* It will not work if the Sellers account does not have a USDC balance!!! I had added USDC to the Buyers account, but not the Sellers account. 
-* Apparently it will not work because it has to get the associated token (USDC) account number of the seller, but it did not have it. 
-* I had to add USDC to the Sellers account as well. 
-* The main issue was the error I got was totally vague: "Transaction simulation failed: Error processing Error processing Instruction 0: invalid account data for instruction"
+   * note: It will not work if the Sellers account does not have a USDC balance... I forgot I had added USDC to the Buyers account, but not the Sellers account. 
+   * The transaction code has to get the associated token (USDC) account number of the seller, but it did not have it. 
+   ✅ I added USDC to the Sellers account as well. 
+   * The main issue was the error I got was totally vague: "Transaction simulation failed: Error processing Error processing Instruction 0: invalid account data for instruction"
+   * Eventually I logged all the account data and went to Solana Block Explorer for Devnet and saw that the seller token did not have a USDC balance. This caused me to transfer the some USDC to it and then it worked!
+✅ Setup Phantom on Mobile (I sent up for devnet account only)
+✅ Create a new pages/shop/index.tsx - Point of Sale Page
+✅ /shop works
+✅ Create a new file pages/shop/checkout.tsx 
+✅ checkout.tsx works
+✅ ✅ checkout QR code appears
+✅ ✅ ✅ checkout with QR code and Mobile and Seller accuont working! 
+✅ Detecting payment - add a new pages/shop/confirmed.tsx
+✅ ✅ ✅ "At this point you have Solana Pay working" -  Solana Pay is able to do exactly what our makeTransaction API is doing: it’s just transferring USDC from the buyer to the shop. This is called a transfer request
+Some examples of what we could do with transactions:
+* Have the buyer send USDC to multiple recipients, or SOL to one and USDC to another, etc!
+* Send USDC to the shop, and have the shop send an NFT in return
+* Send USDC to the shop, and have the shop send a loyalty coupon in return
+* Send a discounted amount of USDC to the shop, in addition to some collected loyalty coupons
+
 
 ### Proposed Step-by-Step
 

@@ -3,7 +3,7 @@ import { ParsedUrlQuery } from 'querystring'
 import { products } from './products'
 
 export default function calculatePrice(query: ParsedUrlQuery): BigNumber {
-  console.log(`calculatePrice`)
+  // console.log(`calculatePrice`)
 
   let amount = new BigNumber(0)
   for (let [id, quantity] of Object.entries(query)) {
