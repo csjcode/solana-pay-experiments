@@ -75,6 +75,20 @@ update shop address in lib/addresses.ts
 ✅ And now when we receive a valid payment we’ll display the new confirmed screen:
 ✅ ✅ ✅ CONFIRMED TRANSACTION AND CONFIRMED PAGE
 
+✅ Confirm USDC - Get devnet USDC https://spl-token-faucet.com/?token-name=USDC-Dev
+✅ update our app so that they can use it to buy our cookies!
+✅ lib/products.ts update our app to use those USDC prices instead of the SOL ones.
+components/Products.tsx 
+✅ lib/calculatePrice.ts - calculatePrice -  We need to update that to use the priceUsd field:
+✅ Go to lib/addresses.ts and add our new address:
+✅ npm install @solana/spl-token provides functionality for SPL tokens:
+✅ Update pages/api/makeTransaction.ts with code to handle this, We have these new variables: usdcMint, buyerUsdcAddress, shopUsdcAddress, We’ve also updated the transaction instruction in transferInstruction
+✅ And now if you checkout you should see a transaction in USDC:
+❌ ✅ Fixed Blocker, non-coding fix  - 
+* It will not work if the Sellers account does not have a USDC balance!!! I had added USDC to the Buyers account, but not the Sellers account. 
+* Apparently it will not work because it has to get the associated token (USDC) account number of the seller, but it did not have it. 
+* I had to add USDC to the Sellers account as well. 
+* The main issue was the error I got was totally vague: "Transaction simulation failed: Error processing Error processing Instruction 0: invalid account data for instruction"
 
 ### Proposed Step-by-Step
 
