@@ -1,7 +1,7 @@
 # Solana Pay experiments
 
 This is the tutorial I am following:
-* [Pointer Solana Pay Tutorial](pointer.gg/tutorials/solana-pay-irl-payments)
+* https://www.pointer.gg/tutorials/solana-pay-irl-payments
 
 
 ### Plan
@@ -22,7 +22,7 @@ This is the tutorial I am following:
 
 -----
 
-✅ Open source starter tutorial code: [Pointer Solana Pay Tutorial](pointer.gg/tutorials/solana-pay-irl-payments)
+✅ Open source starter tutorial code: [Pointer Solana Pay Tutorial](https://pointer.gg/tutorials/solana-pay-irl-payments)
 
 ✅ Set up 2 Phantom Wallets - SolPayBuyer, SolPaySeller
 
