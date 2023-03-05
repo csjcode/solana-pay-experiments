@@ -1,5 +1,9 @@
 # Solana Pay experiments
 
+This is the tutorial I am following:
+* [Pointer Solana Pay Tutorial](pointer.gg/tutorials/solana-pay-irl-payments)
+
+
 ### Plan
 
 1. Bootstrap with the Solana Pay tutorial starter.
