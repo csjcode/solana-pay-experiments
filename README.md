@@ -1,4 +1,4 @@
-# Solana Play experiments
+# Solana Pay experiments
 
 ### Plan
 
