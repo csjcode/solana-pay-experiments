@@ -219,6 +219,9 @@ https://www.pointer.gg/tutorials/solana-pay-irl-payments/ac7f0ecb-71bb-412c-bc52
 
 ✅ Update .nev
 
+❌ Currently stuck on the coupon NFT minting part - have not had time to revisit. Looks like it mints correctly but then no coupon? No network or blockchain error
+  
+  
 ### Proposed Step-by-Step
 
 Part 1 Solana dApp Scaffold Next
